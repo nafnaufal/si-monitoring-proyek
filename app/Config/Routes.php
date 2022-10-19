@@ -38,6 +38,9 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('login', 'Login::login');
 $routes->get('register', 'Register::register');
+$routes->get('lupa_password', 'Login::lupa_password');
+$routes->post('proses_login', 'Login::process');
+$routes->post('proses_register', 'Register::process');
 
 /*
  * --------------------------------------------------------------------
