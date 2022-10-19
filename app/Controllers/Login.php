@@ -12,6 +12,10 @@ class Login extends BaseController
     {
         return view('pages/auth-login-basic.html');
     }
+    public function lupa_password()
+    {
+        return view('pages/auth-forgot-password-basic.html');
+    }
     public function process()
     {
         $users = new ManajerModel();
