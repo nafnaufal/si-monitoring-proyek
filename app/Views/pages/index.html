@@ -88,7 +88,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+              <a href="<?= base_url(); ?>/home" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -171,7 +171,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Naufal Anbial Falah</span>
+                            <span class="fw-semibold d-block"><?=session()->get('username')?></span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -196,7 +196,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="<?= base_url(); ?>/logout">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -221,7 +221,7 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary"><b>Welcome, Naufal!</b></h5>
+                          <h5 class="card-title text-primary"><b>Welcome, <?=session()->get('username')?>!</b></h5>
                           <p class="mb-4">
                             How are you today?
                           </p>

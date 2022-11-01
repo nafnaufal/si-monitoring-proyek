@@ -23,6 +23,9 @@ class Register extends BaseController
                     'is_unique' => 'Username sudah digunakan sebelumnya'
                 ]
             ],
+            'email' => [
+                "rules" => "required|min_length[3]|max_length[20]|valid_email|is_unique[manajer.email]"
+            ],
             'password' => [
                 'rules' => 'required|min_length[4]|max_length[50]',
                 'errors' => [
@@ -37,24 +40,16 @@ class Register extends BaseController
                     'matches' => 'Konfirmasi Password tidak sesuai dengan password',
                 ]
             ],
-            'name' => [
-                'rules' => 'required|min_length[4]|max_length[100]',
-                'errors' => [
-                    'required' => '{field} Harus diisi',
-                    'min_length' => '{field} Minimal 4 Karakter',
-                    'max_length' => '{field} Maksimal 100 Karakter',
-                ]
-            ],
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         }
-        $manajer = new ManajerModel();
-        $manajer->insert([
+        $users = new ManajerModel();
+        $users->insert([
             'username' => $this->request->getVar('username'),
+            'email' => $this->request->getVar('email'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
-            'name' => $this->request->getVar('name')
         ]);
-        return redirect()->to('login');
+        return redirect()->to('/login');
     }
 }
