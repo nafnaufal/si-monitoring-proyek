@@ -50,6 +50,6 @@ class Register extends BaseController
             'email' => $this->request->getVar('email'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
         ]);
-        return redirect()->to('/login');
+        return redirect()->to(base_url().'/login');
     }
 }

@@ -38,12 +38,12 @@ class Login extends BaseController
             }
         } else {
             session()->setFlashdata('error', 'Username & Password Salah');
-            return redirect()->back();
+            // return redirect()->back();
         }
     }
     function logout()
     {
         session()->destroy();
-        return redirect()->to('login');
+        return redirect()->to(base_url().'/login');
     }
 }
