@@ -24,7 +24,7 @@ class Register extends BaseController
                 ]
             ],
             'email' => [
-                "rules" => "required|min_length[3]|max_length[20]|valid_email|is_unique[manajer.email]"
+                "rules" => "required|min_length[3]|max_length[100]|valid_email|is_unique[manajer.email]"
             ],
             'password' => [
                 'rules' => 'required|min_length[4]|max_length[50]',
