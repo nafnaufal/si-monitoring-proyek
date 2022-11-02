@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('login', 'Login::login');
+$routes->get('profile', 'Pages::profile');
 $routes->get('register', 'Register::register');
 $routes->get('lupa_password', 'Login::lupa_password');
 $routes->post('proses_login', 'Login::process');

@@ -31,14 +31,14 @@ class Login extends BaseController
                     'username' => $dataUser->username,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('home'));
+                return redirect()->to(base_url('/'));
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();
             }
         } else {
             session()->setFlashdata('error', 'Username & Password Salah');
-            // return redirect()->back();
+            return redirect()->back();
         }
     }
     function logout()
