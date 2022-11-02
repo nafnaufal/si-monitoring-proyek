@@ -114,10 +114,10 @@
                 </li>
                 <li class="menu-item">
                   <a href="completeProject" class="menu-link">
-                    <div data-i18n="Complete Projects">Complete Projects</div>
+                    <div data-i18n="Complete Project">Complete Project</div>
                   </a>
                 </li><li class="menu-item">
-                  <a href="ProjectAlmanac" class="menu-link">
+                  <a href="projectAlmanac" class="menu-link">
                     <div data-i18n="Complete Projects">Projects Almanac</div>
                   </a>
                 </li>
