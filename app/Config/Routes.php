@@ -44,6 +44,10 @@ $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
 $routes->post('updateProfile', 'Pages::updateProfile');
 $routes->get('/logout', 'Login::logout');
+$routes->get('newProject', 'Pages::newProject');
+$routes->get('onGoingProject', 'Pages::onGoingProject');
+$routes->get('completeProject', 'Pages::completeProject');
+$routes->get('projectAlmanac', 'Pages::projectAlmanac');
 
 /*
  * --------------------------------------------------------------------

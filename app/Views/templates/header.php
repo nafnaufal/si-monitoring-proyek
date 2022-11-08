@@ -103,21 +103,21 @@
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="new-project.html" class="menu-link">
+                  <a href="newProject" class="menu-link">
                     <div data-i18n="New Project">New Project</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="on-going-project.html" class="menu-link">
+                  <a href="onGoingProject" class="menu-link">
                     <div data-i18n="On-going Project">On-going Project</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="complete-projects.html" class="menu-link">
-                    <div data-i18n="Complete Projects">Complete Projects</div>
+                  <a href="completeProject" class="menu-link">
+                    <div data-i18n="Complete Project">Complete Project</div>
                   </a>
                 </li><li class="menu-item">
-                  <a href="complete-projects.html" class="menu-link">
+                  <a href="projectAlmanac" class="menu-link">
                     <div data-i18n="Complete Projects">Projects Almanac</div>
                   </a>
                 </li>
@@ -185,15 +185,9 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="profile">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
                       </a>
                     </li>
                     <li>
@@ -213,68 +207,24 @@
           </nav>
 
           <!-- / Navbar -->
-
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row">
-                <div class="col-lg-8 mb-4 order-0">
-                  <div class="card">
-                    <div class="d-flex align-items-end row">
-                      <div class="col-sm-7">
-                        <div class="card-body">
-                          <h5 class="card-title text-primary"><b>Welcome, <?=session()->get('username')?>!</b></h5>
-                          <p class="mb-4">
-                            How are you today?
-                          </p>
-
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Your Project</a>
-                        </div>
-                      </div>
-                      <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-4">
-                          <img
-                            src="../assets/img/illustrations/man-with-laptop-light.png"
-                            height="140"
-                            alt="View Badge User"
-                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                            data-app-light-img="illustrations/man-with-laptop-light.png"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div class="content-wrapper d-flex align-content-between">
+    <!-- Content -->
+                <div class="container-xxl container-p-y">
+                    <?= $this->renderSection('content') ?>
                 </div>
-              </div>
             </div>
-            <!-- / Content -->
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
+        <footer class="content-footer footer bg-footer-theme">
+            <div class="container-xxl d-flex flex-wrap py-2 flex-md-row flex-column">
+                 <div class="mb-2 mb-md-0">
+                © 
                 </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
-        </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            </div>
+        </footer>
     </div>
-    <!-- / Layout wrapper -->
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

@@ -27,9 +27,9 @@ class Login extends BaseController
         $dataUser = $dataUser[0];
         // dd($dataUser);
         if ($dataUser) {
-            if (password_verify($password, $dataUser->password)) {
+            if (password_verify($password, $dataUser['password'])) {
                 session()->set([
-                    'username' => $dataUser->username,
+                    'username' => $dataUser['username'],
                     'logged_in' => TRUE
                 ]);
                 return redirect()->to(base_url('/'));
