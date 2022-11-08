@@ -23,7 +23,8 @@ class Login extends BaseController
         $password = $this->request->getVar('password');
         $dataUser = $users->where([
             'username' => $username,
-        ])->first();
+        ])->find();
+        $dataUser = $dataUser[0];
         // dd($dataUser);
         if ($dataUser) {
             if (password_verify($password, $dataUser->password)) {

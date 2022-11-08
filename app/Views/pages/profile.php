@@ -277,15 +277,14 @@
                                     <td style="width: 70% !important;"><?= $data[0]['no_telp'] ?></td>
                                 </tr>
                             </table>
-                            <!-- <div class="col-md-4">
-                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> <?php //Tombol modal 
-                                                                                                                  ?>
-                                          <span class="d-none d-sm-block">Edit Profile</span>
+                            <div class="col-md-4">
+                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                          <span class="d-none d-sm-block text-light">Edit Profile</span>
                                     <i class="fas fa-user-edit text-sm" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="Edit Profile" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"></i>
                                 </a>
-                            </div> -->
+                            </div>
                         </div>
                         
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -304,17 +303,6 @@
                                             <div class="form-floating mb-3">
                                               <input type="date" class="form-control ms-1" id="date" name="date">
                                               <label for="date">Birth Date</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                              <select class="form-select ms-1" aria-label=".form-select-sm" name="kelamin">
-                                                <option value="Man" selected>Man</option>
-                                                <option value="Woman">Woman</option>
-                                              </select>
-                                              <label for="gender">Gender</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                              <textarea class="form-control ms-1" id="address" name="address"></textarea>
-                                              <label for="address">Address</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                               <input type="email" class="form-control ms-1" id="email" name="email">

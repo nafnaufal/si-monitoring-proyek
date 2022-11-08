@@ -42,6 +42,7 @@ $routes->get('register', 'Register::register');
 $routes->get('lupa_password', 'Login::lupa_password');
 $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
+$routes->post('updateProfile', 'Pages::updateProfile');
 $routes->get('/logout', 'Login::logout');
 
 /*
