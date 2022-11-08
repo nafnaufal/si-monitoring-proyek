@@ -27,11 +27,11 @@ class Pages extends BaseController
         $phone        = $this->request->getPost('phone');
 
         $data = [
-                'name' => $name,
-                'tgl_lahir' => $date,
-                'email' => $email,
-                'no_telp' => $phone,
-            ];
+            'name' => $name,
+            'tgl_lahir' => $date,
+            'email' => $email,
+            'no_telp' => $phone,
+        ];
         $userModel = new ManajerModel();
 
         $result =  $userModel->update($id, $data);
@@ -40,5 +40,21 @@ class Pages extends BaseController
         } else {
             echo "Something went wrong";
         }
+    }
+    public function newProject()
+    {
+        return view('pages/newproject.php');
+    }
+    public function onGoingProject()
+    {
+        return view('pages/ongoingproject.php');
+    }
+    public function completeProject()
+    {
+        return view('pages/completeproject.php');
+    }
+    public function projectAlmanac()
+    {
+        return view('pages/projectalmanac.php');
     }
 }
