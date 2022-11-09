@@ -28,9 +28,9 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
                                         Detail</a>
-                                    <form action="deleteProject" method="post" id="my_form">
+                                    <form action="deleteProject" method="post" id="<?= $dt['id'] ?>">
                                         <input type="hidden" name="id" id="hiddenField" value="<?= $dt['id'] ?>" />
-                                        <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('my_form').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
+                                        <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $dt['id'] ?>').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
                                     </form>
                                 </div>
                             </div>

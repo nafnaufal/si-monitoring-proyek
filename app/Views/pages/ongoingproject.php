@@ -12,7 +12,6 @@
                     <th>Status</th>
                     <th>Progress</th>
                     <th>Actions</th>
-                    <th>id</th>
                 </tr>
             </thead>
             <tbody class="table-border-bottom-0">
@@ -36,7 +35,6 @@
                                 </div>
                             </div>
                         </td>
-                        <td><span class="badge bg-label-primary me-1"><?= $dt['id'] ?>%</span></td>
                     </tr>
                 <?php } ?>
             </tbody>
