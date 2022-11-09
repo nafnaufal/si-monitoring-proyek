@@ -11,13 +11,12 @@ class Project extends BaseController
 {
     public function deleteProject()
     {
-        // $project = new ProjectModel();
-        // $newProject = $project->where([
-        //     'id' => $this->request->getPost('id'),
-        // ])->delete();
-        // $data['data'] = $newProject;
-        dd($this->request->getPost('id'));
-        // return redirect()->to(previous_url());
+        $project = new ProjectModel();
+        $newProject = $project->where([
+            'id' => $this->request->getPost('id'),
+        ])->delete();
+        $data['data'] = $newProject;
+        return redirect()->to(previous_url());
     }
     public function insertProject()
     {
