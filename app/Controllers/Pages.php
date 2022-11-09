@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Database\Migrations\Manajer;
 use App\Models\ManajerModel;
+use App\Models\ProjectModel;
+use App\Models\DivisiModel;
 
 class Pages extends BaseController
 {
@@ -43,18 +44,41 @@ class Pages extends BaseController
     }
     public function newProject()
     {
-        return view('pages/newproject.php');
+        $div = new DivisiModel();
+        $divList = $div->where([
+            'manajer' => session()->get('username'),
+        ])->find();
+        $data['data'] = $divList;
+        return view('pages/newproject.php', $data);
     }
     public function onGoingProject()
     {
-        return view('pages/ongoingproject.php');
+        $project = new ProjectModel();
+        $onGoingProject = $project->where([
+            'divisi' => 1,
+            'progress >=' => 0,
+            'progress <' => 100,
+        ])->find();
+        $data['data'] = $onGoingProject;
+        return view('pages/ongoingproject.php', $data);
     }
     public function completeProject()
     {
-        return view('pages/completeproject.php');
+        $project = new ProjectModel();
+        $completeProject = $project->where([
+            'divisi' => 1,
+            'progress' => 100,
+        ])->find();
+        $data['data'] = $completeProject;
+        return view('pages/completeproject.php', $data);
     }
     public function projectAlmanac()
     {
-        return view('pages/projectalmanac.php');
+        $project = new ProjectModel();
+        $projectAlmanac = $project->where([
+            'divisi' => 1,
+        ])->find();
+        $data['data'] = $projectAlmanac;
+        return view('pages/projectalmanac.php', $data);
     }
 }
