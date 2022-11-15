@@ -11,7 +11,6 @@ class Divisi extends Migration
         $this->forge->addField([
             'id'          => [
                 'type'           => 'INT',
-                'constraint'     => '12',
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
@@ -22,7 +21,6 @@ class Divisi extends Migration
             'manajer'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
-                'null'            => true,
             ],
             'created_at' => [
                 'type'           => 'DATETIME',
@@ -34,8 +32,8 @@ class Divisi extends Migration
             ]
 
         ]);
-        $this->forge->addPrimaryKey('id', true);
-        // $this->forge->addForeignKey('manajer', 'manajer', 'username', '', 'CASCADE');
+        $this->forge->addPrimaryKey('id');
+        $this->forge->addForeignKey('manajer', 'manajer', 'username', 'CASCADE', 'CASCADE');
         $this->forge->createTable('divisi');
     }
 

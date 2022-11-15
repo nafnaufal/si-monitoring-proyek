@@ -49,13 +49,14 @@ class Pages extends BaseController
             'manajer' => session()->get('username'),
         ])->find();
         $data['data'] = $divList;
+        // dd($divList);
         return view('pages/newproject.php', $data);
     }
     public function onGoingProject()
     {
         $project = new ProjectModel();
         $onGoingProject = $project->where([
-            'divisi' => 1,
+            'divisi' => 3,
             'progress >=' => 0,
             'progress <' => 100,
         ])->find();
@@ -66,7 +67,7 @@ class Pages extends BaseController
     {
         $project = new ProjectModel();
         $completeProject = $project->where([
-            'divisi' => 1,
+            'divisi' => 3,
             'progress' => 100,
         ])->find();
         $data['data'] = $completeProject;
@@ -76,9 +77,23 @@ class Pages extends BaseController
     {
         $project = new ProjectModel();
         $projectAlmanac = $project->where([
-            'divisi' => 1,
+            'divisi' => 3,
         ])->find();
         $data['data'] = $projectAlmanac;
         return view('pages/projectalmanac.php', $data);
+    }
+
+    public function newDivision()
+    {
+        return view('pages/newdivision.php');
+    }
+    public function division()
+    {
+        $divisi = new DivisiModel();
+        $getDiv = $divisi->where([
+            'manajer' => session()->get('username'),
+        ])->find();
+        $data['data'] = $getDiv;
+        return view('pages/division.php', $data);
     }
 }

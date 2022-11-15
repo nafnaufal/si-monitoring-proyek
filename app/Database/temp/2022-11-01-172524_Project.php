@@ -4,21 +4,23 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Task extends Migration
+class Project extends Migration
 {
     public function up()
     {
         $this->forge->addField([
             'id'          => [
-                'type'           => 'INT'
+                'type'           => 'INT',
+                'unsigned'       => true,
+                'auto_increment' => true,
             ],
             'name'       => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '100',
+                'constraint'     => 100,
             ],
             'deskripsi'       => [
                 'type'           => 'VARCHAR',
-                'constraint'     => '1000',
+                'constraint'     => 1000,
                 'null'            => true,
             ],
             'progress'       => [
@@ -29,19 +31,9 @@ class Task extends Migration
                 'type'           => 'DATETIME',
                 'null'            => true,
             ],
-            'start'       => [
-                'type'           => 'DATETIME',
-                'null'            => true,
-            ],
-            'pegawai'       => [
-                'type'           => 'VARCHAR',
-                'constraint'     => '100',
-                'null'            => true,
-            ],
-            'project'       => [
+            'divisi'       => [
                 'type'           => 'INT',
-                'constraint'     => '12',
-                'null'            => true,
+                'unsigned'       => true,
             ],
             'created_at' => [
                 'type'           => 'DATETIME',
@@ -53,16 +45,15 @@ class Task extends Migration
             ]
 
         ]);
-        $this->forge->addPrimaryKey('id', true);
-        // $this->forge->addForeignKey('pegawai', 'pegawai', 'username', '', 'CASCADE');
-        // $this->forge->addForeignKey('project', 'project', 'id', '', 'CASCADE');
-        $this->forge->createTable('task');
+        $this->forge->addPrimaryKey('id');
+        $this->forge->addForeignKey('divisi', 'divisi', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('project');
     }
 
     //--------------------------------------------------------------------
 
     public function down()
     {
-        $this->forge->dropTable('task');
+        $this->forge->dropTable('project');
     }
 }

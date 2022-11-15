@@ -4,37 +4,40 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Project extends Migration
+class Pegawai extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id'          => [
-                'type'           => 'INT',
-                'constraint'     => '12'
+            'username'          => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+            ],
+            'password'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
             ],
             'name'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
+                'null'            => true,
             ],
-            'deskripsi'       => [
+            'tgl_lahir'       => [
+                'type'           => 'DATE',
+                'null'            => true,
+            ],
+            'email'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '1000',
+            ],
+            'no_telp'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '1000',
                 'null'            => true,
             ],
-            'progress'       => [
-                'type'           => 'INT',
-                'null'            => true,
-            ],
-            'deadline'       => [
-                'type'           => 'DATETIME',
-                'null'            => true,
-            ],
             'divisi'       => [
                 'type'           => 'INT',
-                'constraint'     => '12',
                 'unsigned'       => true,
-                'null'            => true,
             ],
             'created_at' => [
                 'type'           => 'DATETIME',
@@ -46,15 +49,15 @@ class Project extends Migration
             ]
 
         ]);
-        $this->forge->addPrimaryKey('id', true);
-        // $this->forge->addForeignKey('divisi', 'divisi', 'id', '', 'CASCADE');
-        $this->forge->createTable('project');
+        $this->forge->addPrimaryKey('username');
+        $this->forge->addForeignKey('divisi', 'divisi', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('pegawai');
     }
 
     //--------------------------------------------------------------------
 
     public function down()
     {
-        $this->forge->dropTable('project');
+        $this->forge->dropTable('pegawai');
     }
 }

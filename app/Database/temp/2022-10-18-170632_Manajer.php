@@ -20,6 +20,7 @@ class Manajer extends Migration
             'name'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
+                'null'            => true,
             ],
             'tgl_lahir'       => [
                 'type'           => 'DATE',
@@ -32,6 +33,7 @@ class Manajer extends Migration
             'no_telp'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '1000',
+                'null'            => true,
             ],
             'created_at' => [
                 'type'           => 'DATETIME',
@@ -43,12 +45,9 @@ class Manajer extends Migration
             ]
 
         ]);
-        $this->forge->addPrimaryKey('username', true);
+        $this->forge->addPrimaryKey('username');
         $this->forge->createTable('manajer');
     }
-
-    //--------------------------------------------------------------------
-
     public function down()
     {
         $this->forge->dropTable('manajer');

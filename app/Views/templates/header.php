@@ -73,7 +73,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="<?= base_url(); ?>/" class="app-brand-link">
               <img src="../assets/img/favicon/logo.png" alt="" width="25px">
               <span class="app-brand-text demo menu-text fw-bolder ms-2">Simoni</span>
             </a>
@@ -94,6 +94,26 @@
               </a>
             </li>
 
+            <!-- Layouts -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Projects">Division</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="newDivision" class="menu-link">
+                    <div data-i18n="New Project">New Division</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="division" class="menu-link">
+                    <div data-i18n="On-going Project">Your Division</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <!-- Layouts -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">

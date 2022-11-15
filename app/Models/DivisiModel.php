@@ -10,5 +10,6 @@ class DivisiModel extends Model
     protected $primaryKey       = "id";
     protected $returnType       = "array";
     protected $useTimestamps    = true;
+    protected $useAutoIncrement = true;
     protected $allowedFields    = ['id', 'name', 'manajer'];
 }

@@ -36,20 +36,31 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('login', 'Login::login');
 $routes->get('profile', 'Pages::profile');
+
+$routes->get('login', 'Login::login');
 $routes->get('register', 'Register::register');
 $routes->get('lupa_password', 'Login::lupa_password');
-$routes->post('proses_login', 'Login::process');
-$routes->post('deleteProject', 'Project::deleteProject');
-$routes->post('insertProject', 'Project::insertProject');
-$routes->post('proses_register', 'Register::process');
-$routes->post('updateProfile', 'Pages::updateProfile');
 $routes->get('/logout', 'Login::logout');
+$routes->post('proses_login', 'Login::process');
+$routes->post('proses_register', 'Register::process');
+
 $routes->get('newProject', 'Pages::newProject');
 $routes->get('onGoingProject', 'Pages::onGoingProject');
 $routes->get('completeProject', 'Pages::completeProject');
 $routes->get('projectAlmanac', 'Pages::projectAlmanac');
+
+$routes->post('deleteProject', 'Project::deleteProject');
+$routes->post('insertProject', 'Project::insertProject');
+
+
+$routes->post('updateProfile', 'Pages::updateProfile');
+
+$routes->get('newDivision', 'Pages::newDivision');
+$routes->get('division', 'Pages::division');
+
+$routes->post('deleteDivision', 'Division::deleteDivision');
+$routes->post('insertDivision', 'Division::insertDivision');
 
 /*
  * --------------------------------------------------------------------

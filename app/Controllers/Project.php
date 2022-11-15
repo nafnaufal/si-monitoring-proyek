@@ -21,11 +21,7 @@ class Project extends BaseController
     public function insertProject()
     {
         $project = new ProjectModel();
-        $m = $project->where([
-            'divisi' => 1,
-        ])->orderBy('id', 'DESC')->find();
         $project->insert([
-            'id' => (int)$m[0]['id'] + 1,
             'name' => $this->request->getPost('name'),
             'progress' => 0,
             'deskripsi' => $this->request->getPost('desc'),
