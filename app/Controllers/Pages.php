@@ -84,7 +84,7 @@ class Pages extends BaseController
     }
     public function detailProject()
     {
-        return view('pages/detailproject.php');
+        return view('pages/projectdetail.php');
     }
 
     public function newDivision()
