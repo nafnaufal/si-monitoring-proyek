@@ -41,9 +41,11 @@ $routes->get('profile', 'Pages::profile');
 $routes->get('login', 'Login::login');
 $routes->get('register', 'Register::register');
 $routes->get('lupa_password', 'Login::lupa_password');
-$routes->get('/logout', 'Login::logout');
+$routes->get('logout', 'Login::logout');
 $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
+
+$routes->get('detailProject', 'Pages::detailProject');
 
 $routes->get('newProject', 'Pages::newProject');
 $routes->get('onGoingProject', 'Pages::onGoingProject');

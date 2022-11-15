@@ -82,6 +82,10 @@ class Pages extends BaseController
         $data['data'] = $projectAlmanac;
         return view('pages/projectalmanac.php', $data);
     }
+    public function detailProject()
+    {
+        return view('pages/detailproject.php');
+    }
 
     public function newDivision()
     {
