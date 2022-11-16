@@ -26,11 +26,14 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                                        Detail</a>
-                                    <form action="deleteProject" method="post" id="<?= $dt['id'] ?>">
+                                    <form action="detailProject" method="post" id="<?= $dt['id'] ?>detail">
                                         <input type="hidden" name="id" id="hiddenField" value="<?= $dt['id'] ?>" />
-                                        <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $dt['id'] ?>').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
+                                        <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $dt['id'] ?>detail').submit();"><i class=" bx bx-edit-alt me-1"></i>
+                                            Detail</a>
+                                    </form>
+                                    <form action="deleteProject" method="post" id="<?= $dt['id'] ?>delete">
+                                        <input type="hidden" name="id" id="hiddenField" value="<?= $dt['id'] ?>" />
+                                        <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $dt['id'] ?>delete').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
                                     </form>
                                 </div>
                             </div>

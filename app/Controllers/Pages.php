@@ -84,13 +84,25 @@ class Pages extends BaseController
     }
     public function detailProject()
     {
-        return view('pages/projectdetail.php');
+        $project = new ProjectModel();
+        $getProject = $project->where([
+            'id' => $this->request->getPost('id'),
+        ])->find();
+        $data['data'] = $getProject[0];
+        // dd($getProject[0]);
+        return view('pages/projectdetail.php', $data);
+    }
+
+    public function detailDivision()
+    {
+        return view('pages/divisiondetail.php');
     }
 
     public function newDivision()
     {
         return view('pages/newdivision.php');
     }
+
     public function division()
     {
         $divisi = new DivisiModel();
@@ -99,5 +111,15 @@ class Pages extends BaseController
         ])->find();
         $data['data'] = $getDiv;
         return view('pages/division.php', $data);
+    }
+
+    public function newTask()
+    {
+        $project = new ProjectModel();
+        $getProject = $project->where([
+            'id' => session()->get('id'),
+        ])->find();
+        dd($getProject);
+        // return view('pages/newtask.php', $data);
     }
 }

@@ -45,7 +45,10 @@ $routes->get('logout', 'Login::logout');
 $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
 
-$routes->get('detailProject', 'Pages::detailProject');
+$routes->post('detailProject', 'Pages::detailProject');
+$routes->get('detailDivision', 'Pages::detailDivision');
+
+$routes->post('newTask', 'Pages::newTask');
 
 $routes->get('newProject', 'Pages::newProject');
 $routes->get('onGoingProject', 'Pages::onGoingProject');
@@ -55,6 +58,8 @@ $routes->get('projectAlmanac', 'Pages::projectAlmanac');
 $routes->post('deleteProject', 'Project::deleteProject');
 $routes->post('insertProject', 'Project::insertProject');
 
+$routes->post('deleteTask', 'Task::deleteTask');
+$routes->post('insertTask', 'Task::insertTask');
 
 $routes->post('updateProfile', 'Pages::updateProfile');
 

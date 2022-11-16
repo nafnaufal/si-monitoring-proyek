@@ -16,40 +16,41 @@
                         <div class="card-body">
                             <table class="table table-borderless text-dark ps-0 text-sm">
                                 <tr>
-                                    <td style="width: 15% !important;">Project Name</td>
+                                    <td style="width: 15% !important;">Division Name</td>
                                     <td style="width: 5% !important;">:</td>
                                     <td style="width: 70% !important;"></td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 15% !important;">Description</td>
-                                    <td style="width: 5% !important;">:</td>
-                                    <td style="width: 70% !important;"></td>
+                                    <td style="width: 15% !important;">
+                                        <h5>Member</h5>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td style="width: 15% !important;">Task</td>
-                                    <td style="width: 5% !important;">:</td>
-                                    <td style="width: 70% !important;"></td>
-                                </tr>
+
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Description</th>
-                                            <th>Progress</th>
-                                            <th>Start</th>
-                                            <th>Deadline</th>
-                                            <th>Employee</th>
-                                            <th>Project</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
+                                        <tr>
+                                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>Name<strong></strong></td>
+                                            <td>Email</td>
+                                            <td>
+                                                <form action="deleteProject" method="post" id="">
+                                                    <input type="hidden" name="id" id="hiddenField" value="" />
+                                                    <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('id').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
+                                                </form>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </table>
-                            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <a class="btn btn-primary" href="newtask">
                                 <span class="d-none d-sm-block text-white">Add Task</span>
-                                <i class="fas fa-user-edit text-sm" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Add Task" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                <i class="fas fa-user-edit text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Task" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                             </a>
                         </div>
                     </div>

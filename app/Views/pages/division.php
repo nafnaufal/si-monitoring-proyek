@@ -26,7 +26,7 @@
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                                    <a class="dropdown-item" href="detailDivision"><i class="bx bx-edit-alt me-1"></i>
                                         Detail</a>
                                     <form action="deleteDivision" method="post" id="<?= $dt['id'] ?>">
                                         <input type="hidden" name="id" id="hiddenField" value="<?= $dt['id'] ?>" />
