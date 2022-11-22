@@ -6,6 +6,7 @@
     <h5 class="card-header">New Task</h5>
     <div class="card-body">
         <form action="insertTask" method="post">
+            <input type="hidden" name="id_project" id="hiddenField" value="<?= $id_project ?>" />
             <label for="name">Task Name</label>
             <input type="text" class="form-control" id="name" name="name">
             <label for="desc">Description</label>
@@ -13,8 +14,9 @@
             <label for="employee">Employee</label>
             <select class="form-control" id="employee" name="employee">
                 <option value="none" selected disabled hidden>Pilih Employee</option>
-                <option value="emp 1">emp 1</option>
-                <option value="emp 2">emp 2</option>
+                <?php foreach ($member as $m) { ?>
+                    <option value="<?= $m['username'] ?>"><?= $m['username'] ?></option>
+                <?php } ?>
             </select>
             <button type="submit" class="btn btn-primary mt-2">Insert</button>
         </form>

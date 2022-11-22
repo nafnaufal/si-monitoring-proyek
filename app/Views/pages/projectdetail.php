@@ -46,35 +46,36 @@
                                         <tr>
                                             <th>Task</th>
                                             <th>Progress</th>
-                                            <th>Start</th>
-                                            <th>Deadline</th>
                                             <th>Employee</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
-                                        <tr>
-                                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>Task<strong></strong></td>
-                                            <td><span class="badge bg-label-primary me-1">100%</span></td>
-                                            <td>Date</td>
-                                            <td>Date</td>
-                                            <td>Employee</td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="detailProject"><i class="bx bx-edit-alt me-1"></i>
-                                                            Detail</a>
-                                                        <form action="deleteProject" method="post" id="">
-                                                            <input type="hidden" name="id" id="hiddenField" value="" />
-                                                            <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('id').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
-                                                        </form>
+                                        <?php foreach ($task as $ts) { ?>
+                                            <tr>
+                                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><?= $ts['name'] ?></strong></td>
+                                                <td><span class="badge bg-label-primary me-1"><?= $ts['progress'] ?>%</span></td>
+                                                <td><span class="badge bg-label-primary me-1"><?= $ts['pegawai'] ?></span></td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <form action="detailTask" method="post" id="<?= $ts['id'] ?>detail">
+                                                                <input type="hidden" name="id" id="hiddenField" value="<?= $ts['id'] ?>" />
+                                                                <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $ts['id'] ?>detail').submit();"><i class=" bx bx-edit-alt me-1"></i>
+                                                                    Detail</a>
+                                                            </form>
+                                                            <form action="deleteTask" method="post" id="<?= $ts['id'] ?>delete">
+                                                                <input type="hidden" name="id" id="hiddenField" value="<?= $ts['id'] ?>" />
+                                                                <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('<?= $ts['id'] ?>delete').submit();"><i class="bx bx-trash me-1"></i>Delete</a>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </table>
@@ -82,6 +83,7 @@
                                 <input type="hidden" name="id" id="hiddenField" value="<?= $data['id'] ?>" />
                                 <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById('addTask').submit();">Add Task
                                     <i class="fas fa-user-edit text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Task"></i></a>
+                            </form>
                         </div>
                     </div>
                 </div>

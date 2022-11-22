@@ -4,7 +4,6 @@
 
 <div class="card">
     <h5 class="card-header">Complete Project</h5>
-    <div class="table-responsive text-nowrap">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -42,7 +41,6 @@
                 <?php } ?>
             </tbody>
         </table>
-    </div>
 </div>
 
 <?= $this->endSection() ?>

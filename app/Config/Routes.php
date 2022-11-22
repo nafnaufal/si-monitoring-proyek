@@ -45,15 +45,15 @@ $routes->get('logout', 'Login::logout');
 $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
 
-$routes->post('detailProject', 'Pages::detailProject');
-$routes->get('detailDivision', 'Pages::detailDivision');
+$routes->post('detailProject', 'Project::detailProject');
+$routes->post('detailDivision', 'Division::detailDivision');
 
-$routes->post('newTask', 'Pages::newTask');
+$routes->post('newTask', 'Task::newTask');
 
-$routes->get('newProject', 'Pages::newProject');
-$routes->get('onGoingProject', 'Pages::onGoingProject');
-$routes->get('completeProject', 'Pages::completeProject');
-$routes->get('projectAlmanac', 'Pages::projectAlmanac');
+$routes->get('newProject', 'Project::newProject');
+$routes->get('onGoingProject', 'Project::onGoingProject');
+$routes->get('completeProject', 'Project::completeProject');
+$routes->get('projectAlmanac', 'Project::projectAlmanac');
 
 $routes->post('deleteProject', 'Project::deleteProject');
 $routes->post('insertProject', 'Project::insertProject');
@@ -63,11 +63,15 @@ $routes->post('insertTask', 'Task::insertTask');
 
 $routes->post('updateProfile', 'Pages::updateProfile');
 
-$routes->get('newDivision', 'Pages::newDivision');
-$routes->get('division', 'Pages::division');
+$routes->get('newDivision', 'Division::newDivision');
+$routes->get('division', 'Division::division');
 
 $routes->post('deleteDivision', 'Division::deleteDivision');
 $routes->post('insertDivision', 'Division::insertDivision');
+
+$routes->post('addMember', 'Division::addMember');
+$routes->post('deleteMember', 'Division::deleteMember');
+
 
 /*
  * --------------------------------------------------------------------

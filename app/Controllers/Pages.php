@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ManajerModel;
 use App\Models\ProjectModel;
+use App\Models\PegawaiModel;
 use App\Models\DivisiModel;
 
 class Pages extends BaseController
@@ -18,6 +19,8 @@ class Pages extends BaseController
         $data['data'] = $dataUser;
         return view('pages/profile.php', $data);
     }
+
+    
     public function updateProfile()
     {
         $session = session();
@@ -42,84 +45,24 @@ class Pages extends BaseController
             echo "Something went wrong";
         }
     }
-    public function newProject()
-    {
-        $div = new DivisiModel();
-        $divList = $div->where([
-            'manajer' => session()->get('username'),
-        ])->find();
-        $data['data'] = $divList;
-        // dd($divList);
-        return view('pages/newproject.php', $data);
-    }
-    public function onGoingProject()
-    {
-        $project = new ProjectModel();
-        $onGoingProject = $project->where([
-            'divisi' => 3,
-            'progress >=' => 0,
-            'progress <' => 100,
-        ])->find();
-        $data['data'] = $onGoingProject;
-        return view('pages/ongoingproject.php', $data);
-    }
-    public function completeProject()
-    {
-        $project = new ProjectModel();
-        $completeProject = $project->where([
-            'divisi' => 3,
-            'progress' => 100,
-        ])->find();
-        $data['data'] = $completeProject;
-        return view('pages/completeproject.php', $data);
-    }
-    public function projectAlmanac()
-    {
-        $project = new ProjectModel();
-        $projectAlmanac = $project->where([
-            'divisi' => 3,
-        ])->find();
-        $data['data'] = $projectAlmanac;
-        return view('pages/projectalmanac.php', $data);
-    }
-    public function detailProject()
-    {
-        $project = new ProjectModel();
-        $getProject = $project->where([
-            'id' => $this->request->getPost('id'),
-        ])->find();
-        $data['data'] = $getProject[0];
-        // dd($getProject[0]);
-        return view('pages/projectdetail.php', $data);
-    }
-
-    public function detailDivision()
-    {
-        return view('pages/divisiondetail.php');
-    }
-
-    public function newDivision()
-    {
-        return view('pages/newdivision.php');
-    }
-
-    public function division()
-    {
-        $divisi = new DivisiModel();
-        $getDiv = $divisi->where([
-            'manajer' => session()->get('username'),
-        ])->find();
-        $data['data'] = $getDiv;
-        return view('pages/division.php', $data);
-    }
 
     public function newTask()
     {
         $project = new ProjectModel();
         $getProject = $project->where([
-            'id' => session()->get('id'),
+            'id' => $this->request->getPost('id'),
+        ])->find()[0];
+
+        $pegawai = new PegawaiModel();
+        $getPeg = $pegawai->where([
+            'divisi' => $getProject['divisi'],
         ])->find();
-        dd($getProject);
-        // return view('pages/newtask.php', $data);
+
+
+        $data['id_project'] = $this->request->getPost('id');
+        $data['member'] = $getPeg;
+
+        // dd($data);
+        return view('pages/newtask.php', $data);
     }
 }

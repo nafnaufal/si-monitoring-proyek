@@ -11,5 +11,5 @@ class ProjectModel extends Model
     protected $returnType       = "array";
     protected $useAutoIncrement = true;
     protected $useTimestamps    = true;
-    protected $allowedFields    = ['id', 'name', 'deskripsi', 'progress', 'deadline', 'divisi'];
+    protected $allowedFields    = ['id', 'name', 'deskripsi', 'progress', 'deadline','manajer', 'divisi'];
 }

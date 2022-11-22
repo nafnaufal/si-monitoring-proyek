@@ -31,6 +31,10 @@ class Project extends Migration
                 'type'           => 'DATETIME',
                 'null'            => true,
             ],
+            'manajer'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '100',
+            ],
             'divisi'       => [
                 'type'           => 'INT',
                 'unsigned'       => true,
@@ -46,6 +50,7 @@ class Project extends Migration
 
         ]);
         $this->forge->addPrimaryKey('id');
+        $this->forge->addForeignKey('manajer', 'manajer', 'username', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('divisi', 'divisi', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('project');
     }
