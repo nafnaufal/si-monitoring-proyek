@@ -41,7 +41,11 @@ class Filters extends BaseConfig
                     'login',
                     'proses_login',
                     'register',
-                    'proses_register'
+                    'proses_register',
+                    'employee/login',
+                    'employee/proses_login',
+                    'employee/register',
+                    'employee/proses_register'
                 ]
             ]
             // 'invalidchars',

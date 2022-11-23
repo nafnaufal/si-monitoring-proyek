@@ -28,15 +28,20 @@ $routes->set404Override();
 // $routes->setAutoRoute(false);
 
 /*
- * --------------------------------------------------------------------
- * Route Definitions
- * --------------------------------------------------------------------
- */
+* --------------------------------------------------------------------
+* Route Definitions
+* --------------------------------------------------------------------
+*/
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('profile', 'Pages::profile');
+$routes->get('employee/task', 'EmployeePages::employeeTask');
+
+$routes->get('employee/home', 'EmployeePages::index');
+$routes->get('employee/profile', 'EmployeePages::profile');
+$routes->post('employee/detailTask', 'EmployeePages::detailTask');
 
 $routes->get('login', 'Login::login');
 $routes->get('register', 'Register::register');
@@ -44,6 +49,13 @@ $routes->get('lupa_password', 'Login::lupa_password');
 $routes->get('logout', 'Login::logout');
 $routes->post('proses_login', 'Login::process');
 $routes->post('proses_register', 'Register::process');
+
+$routes->get('employee/login', 'EmployeeLogin::login');
+$routes->get('employee/register', 'EmployeeRegister::register');
+$routes->get('employee/lupa_password', 'EmployeeLogin::lupa_password');
+$routes->get('employee/logout', 'EmployeeLogin::logout');
+$routes->post('employee/proses_login', 'EmployeeLogin::process');
+$routes->post('employee/proses_register', 'EmployeeRegister::process');
 
 $routes->post('detailProject', 'Project::detailProject');
 $routes->post('detailDivision', 'Division::detailDivision');
