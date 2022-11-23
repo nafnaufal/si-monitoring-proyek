@@ -42,6 +42,9 @@ $routes->get('employee/task', 'EmployeePages::employeeTask');
 $routes->get('employee/home', 'EmployeePages::index');
 $routes->get('employee/profile', 'EmployeePages::profile');
 $routes->post('employee/detailTask', 'EmployeePages::detailTask');
+$routes->post('employee/editTask', 'EmployeePages::editTask');
+$routes->post('employee/insertTask', 'EmployeePages::updateTask');
+
 
 $routes->get('login', 'Login::login');
 $routes->get('register', 'Register::register');

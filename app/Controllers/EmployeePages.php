@@ -38,4 +38,36 @@ class EmployeePages extends BaseController
         // dd($data);
         return view('pages/employee/taskdetail.php', $data);
     }
+    public function editTask()
+    {
+        $div = new TaskModel();
+        $divList = $div->where([
+            'id' => $this->request->getPost('id'),
+        ])->find();
+        $data['data'] = $divList[0];
+        // dd($data);
+        return view('pages/employee/edittask.php', $data);
+    }
+    public function updateTask()
+    {
+        $session = session();
+        $id        = $this->request->getPost('id');
+        $name    = $this->request->getPost('name');
+        $progress    = $this->request->getPost('progress');
+        $desc        = $this->request->getPost('deskripsi');
+
+        $data = [
+            'name' => $name,
+            'progress' => $progress,
+            'deskripsi' => $desc,
+        ];
+        $userModel = new TaskModel();
+
+        $result =  $userModel->update($id, $data);
+        if ($result) {
+            return redirect()->to('employee/home');
+        } else {
+            echo "Something went wrong";
+        }
+    }
 }

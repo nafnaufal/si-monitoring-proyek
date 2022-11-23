@@ -189,11 +189,13 @@
     <h5 class="card-header">New Task</h5>
     <div class="card-body">
         <form action="insertTask" method="post">
-            <input type="hidden" name="id_project" id="hiddenField" value="<?= $id_project ?>" />
+            <input type="hidden" name="id" id="hiddenField" value="<?= $data['id'] ?>" />
             <label for="name">Task Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" value="<?= $data['name'] ?>">
+            <label for="progress">progress</label>
+            <input type="number" class="form-control" id="progress" name="progress" value="<?= $data['progress'] ?>" />
             <label for="desc">Description</label>
-            <textarea name="desc" id="desc" class="form-control" cols="30" rows="10"></textarea>
+            <textarea name="desc" id="desc" class="form-control" cols="30" rows="10" value="<?= $data['deskripsi'] ?>"></textarea>
             <button type="submit" class="btn btn-primary mt-2">Insert</button>
         </form>
     </div>
